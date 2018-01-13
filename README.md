@@ -2,12 +2,12 @@
 **Part 1:**  
 We wish to implement a finite state machine (FSM) that recognizes two specific sequences of applied input symbols, namely four consecutive 0s or the sequence 0110. There is an input w and an output z. Whenever w = 0 for four consecutive clock pulses, or when the sequence 0110 appears on w across four consecutive clock pulses, the value of z has to be 1; otherwise, z = 0. Overlapping sequences are allowed, so, for example, if w = 0 for five consecutive clock pulses the output z will be equal to1 after the fourth and fifth pulses. Figure 1 illustrates the required relationship between w and z.  
 
-
+![image](https://user-images.githubusercontent.com/19510655/34909021-150314c0-f868-11e7-9cfc-1a068774d0cd.png)  
 Figure 1. Required timing for the output z.  
 
 A state diagram for this FSM is shown in Figure 2. For this part you are to manually derive an FSM circuit that implements this state diagram, including the logic expressions that feed each of the state flip-flops. To implement the FSM, use seven state flip-flops called y7…y0 and the onehot state assignment given in Table 1.  
 
-
+![image](https://user-images.githubusercontent.com/19510655/34909022-22517450-f868-11e7-99fa-b6085c7d895f.png)  
 Figure 2. A state diagram for the FSM.  
 
 | Name | y7 y6 y5 y4 y3 y2 y1 y0 |
@@ -38,12 +38,22 @@ Design and implement your circuit on the DE2 board as follows:
 **Part 2.**  
 For this part you are to write another style of Verilog code for the FSM in Figure 2. In this version of the code you should not manually derive the logic expressions needed for each state flip-flop. Instead, describe the state table for the FSM by using a Verilog case statement in an always block, and use another always block to instantiate the state flip-flops. You can use a third always block or simple assignment statements to specify the output z. To implement the FSM, use three state flip-flops y2…y0 and binary codes, as shown in Table 3.  
 
+| Name | y2 y1 y0 |
+| ------------- | ------------- |
+| A | 000 |
+| B | 001 |
+| C | 010 |
+| D | 011 |
+| E | 100 |
+| F | 101 |
+| G | 110 |
+| H | 111 |
 
 Table 2: Binary codes for the FSM.  
 
 A suggested skeleton of the Verilog code is given in Figure 3.  
 
-
+![image](https://user-images.githubusercontent.com/19510655/34909031-45c36f42-f868-11e7-914f-dbe299ca9b95.png)  
 Figure 3: Skeleton Verilog code for the FSM.  
 
 Implement your circuit as follows.  
@@ -60,7 +70,7 @@ The sequence detector can be implemented in a straightforward manner using a 4-b
 **Part 4.**  
 In this part of the exercise you are to implement aMorse code encoder using an FSM. TheMorse code uses patterns of short and long pulses to represent a message. Each letter is represented as a sequence of dots (a short pulse), and dashes (a long pulse). For example, starting fromQ, eight letters of the alphabet have the following representation:  
 
-
+![image](https://user-images.githubusercontent.com/19510655/34909038-574e1ec4-f868-11e7-93fb-df8bcffec990.png)  
 
 Design and implement a Morse code encoder circuit using an FSM. Your circuit should take as input one of the eight letters of the alphabet starting from Q (as in the table above) and display the Morse code for it on a red LED, LEDR0. Use switches SW2−0 and pushbuttons KEY1−0 as inputs. When a user presses KEY1, the circuit should display the Morse code for a letter specified by SW2−0 (000 for Q, 001 for R, etc.), using 0.5-second pulses to represent dots, and 1.5-second pulses to represent dashes. Pushbutton KEY0 should function as an asynchronous reset.  
 You are free to design the circuit however you wish. One possibility is to use shift registers(s) to hold the symbols (i.e. dots and dashes) for each letter, with the idea being to shift each time a symbol is output to the red LED, thereby allowing the symbols for the letter to be displayed in the proper succession. Additional register(s) and a counter can then be used to make sure that the right number of symbols are output for each letter (since, for example, T has only one symbol, and Q has 4 symbols).
@@ -68,7 +78,7 @@ You are free to design the circuit however you wish. One possibility is to use s
 **Hint for part 4 (Lab 7):**  
 Here is a suggested architecture you can use. Feel free to modify this architecture or use another approach.
 
-
+![image](https://user-images.githubusercontent.com/19510655/34909040-63d963d8-f868-11e7-8fe2-17db476c6e09.png)  
 
 • There should be a top-level reset signal, not shown in the figure that resets the FSM to its starting state.  
 • The Start signal tells the FSM to output the flashes according to the SymbolCode. The SymbolCode input specifies the letter to output.  
