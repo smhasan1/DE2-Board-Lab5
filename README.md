@@ -10,7 +10,7 @@ A state diagram for this FSM is shown in Figure 2. For this part you are to manu
 
 Figure 2. A state diagram for the FSM.  
 
-|  | State Code |
+|   | State Code |
 | Name  | y7 y6 y5 y4 y3 y2 y1 y0 |
 | ------------- | ------------- |
 | A | 00000001 |
@@ -21,6 +21,7 @@ Figure 2. A state diagram for the FSM.
 | F | 00100000 |
 | G | 01000000 |
 | H | 10000000 |
+
 Table 1: One-hot codes for the FSM.  
 
 Design and implement your circuit on the DE2 board as follows:  
