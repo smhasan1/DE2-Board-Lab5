@@ -10,7 +10,6 @@ A state diagram for this FSM is shown in Figure 2. For this part you are to manu
 
 Figure 2. A state diagram for the FSM.  
 
-| a | State Code |
 | Name | y7 y6 y5 y4 y3 y2 y1 y0 |
 | ------------- | ------------- |
 | A | 00000001 |
